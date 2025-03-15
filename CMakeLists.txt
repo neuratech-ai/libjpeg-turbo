@@ -57,9 +57,9 @@ endif()
 # ExternalProject_Add() or make downstream modifications to the libjpeg-turbo
 # build system to suit their specific needs.  Please do not file bug reports,
 # feature requests, or pull requests regarding this.
-if(NOT CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
-  message(FATAL_ERROR "The libjpeg-turbo build system cannot be integrated into another build system using add_subdirectory().  Use ExternalProject_Add() instead.")
-endif()
+# if(NOT CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+#   message(FATAL_ERROR "The libjpeg-turbo build system cannot be integrated into another build system using add_subdirectory().  Use ExternalProject_Add() instead.")
+# endif()
 
 # CMake 3.14 and later sets CMAKE_MACOSX_BUNDLE to TRUE by default when
 # CMAKE_SYSTEM_NAME is iOS, tvOS, or watchOS, which breaks the libjpeg-turbo
@@ -2020,24 +2020,24 @@ endif()
 install(TARGETS rdjpgcom wrjpgcom
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT bin)
 
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/README.ijg
-  ${CMAKE_CURRENT_SOURCE_DIR}/README.md
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/example.c
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/tjcomp.c
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/tjdecomp.c
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/tjtran.c
-  ${CMAKE_CURRENT_SOURCE_DIR}/doc/libjpeg.txt
-  ${CMAKE_CURRENT_SOURCE_DIR}/doc/structure.txt
-  ${CMAKE_CURRENT_SOURCE_DIR}/doc/usage.txt
-  ${CMAKE_CURRENT_SOURCE_DIR}/doc/wizard.txt
-  ${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.md DESTINATION ${CMAKE_INSTALL_DOCDIR}
-  COMPONENT doc)
-if(WITH_JAVA)
-  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/java/TJComp.java
-    ${CMAKE_CURRENT_SOURCE_DIR}/java/TJDecomp.java
-    ${CMAKE_CURRENT_SOURCE_DIR}/java/TJTran.java
-    DESTINATION ${CMAKE_INSTALL_DOCDIR} COMPONENT doc)
-endif()
+# install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/README.ijg
+#   ${CMAKE_CURRENT_SOURCE_DIR}/README.md
+#   ${CMAKE_CURRENT_SOURCE_DIR}/src/example.c
+#   ${CMAKE_CURRENT_SOURCE_DIR}/src/tjcomp.c
+#   ${CMAKE_CURRENT_SOURCE_DIR}/src/tjdecomp.c
+#   ${CMAKE_CURRENT_SOURCE_DIR}/src/tjtran.c
+#   ${CMAKE_CURRENT_SOURCE_DIR}/doc/libjpeg.txt
+#   ${CMAKE_CURRENT_SOURCE_DIR}/doc/structure.txt
+#   ${CMAKE_CURRENT_SOURCE_DIR}/doc/usage.txt
+#   ${CMAKE_CURRENT_SOURCE_DIR}/doc/wizard.txt
+#   ${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.md DESTINATION ${CMAKE_INSTALL_DOCDIR}
+#   COMPONENT doc)
+# if(WITH_JAVA)
+#   install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/java/TJComp.java
+#     ${CMAKE_CURRENT_SOURCE_DIR}/java/TJDecomp.java
+#     ${CMAKE_CURRENT_SOURCE_DIR}/java/TJTran.java
+#     DESTINATION ${CMAKE_INSTALL_DOCDIR} COMPONENT doc)
+# endif()
 
 if(UNIX OR MINGW)
   install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/doc/cjpeg.1
