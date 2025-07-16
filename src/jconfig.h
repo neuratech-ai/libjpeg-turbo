@@ -53,8 +53,4 @@ typedef signed int INT32;
 
 #else
 
-/* Define if your (broken) compiler shifts signed values as if they were
-   unsigned. */
-#cmakedefine RIGHT_SHIFT_IS_UNSIGNED 1
-
 #endif
